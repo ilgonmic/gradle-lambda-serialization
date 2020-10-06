@@ -1,0 +1,22 @@
+plugins {
+    id 'org.jetbrains.kotlin.js' version '1.4.255-SNAPSHOT'
+}
+group = 'me.user'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-js'
+}
+kotlin {
+    js {
+        compilations["main"].packageJson {
+            customField("hello", "two")
+        }
+        browser {
+        }
+    }
+}
