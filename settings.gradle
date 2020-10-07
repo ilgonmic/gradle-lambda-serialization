@@ -1,15 +1,8 @@
 pluginManagement {
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == "kotlin-dce-js") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-            if (requested.id.id == "kotlinx-serialization") {
-                useModule("org.jetbrains.kotlin:kotlin-serialization:${requested.version}")
-            }
-        }
-    }
     repositories {
+        maven {
+            url("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev")
+        }
         mavenLocal()
         gradlePluginPortal()
         mavenCentral()
